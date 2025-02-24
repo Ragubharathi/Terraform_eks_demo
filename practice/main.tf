@@ -34,4 +34,7 @@ resource "aws_instance" "ec2-aws_instance" {
   ami = "ami-0d682f26195e9ec0f"
   subnet_id = aws_subnet.public_sub_1
   security_groups = aws_security_group.securitygroup.id
+  tags = {
+    Name = "ec2_instance_terraform"
+  }
 }
