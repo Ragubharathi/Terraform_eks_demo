@@ -1,7 +1,3 @@
-provider "aws" {
-  region = var.projectA_region
-}
-
 resource "aws_security_group" "securitygroup" {
   name = "ec2-securitygroup"
   description = "allow ssh and http"
