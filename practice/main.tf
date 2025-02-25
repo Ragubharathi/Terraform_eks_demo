@@ -24,17 +24,16 @@ resource "aws_security_group" "securitygroup" {
   }
 }
 
-
-resource "aws_instance" "ec2_instance" {
+resource "aws_instance" "server" {
   instance_type = "t2.micro"
   ami = "ami-0d682f26195e9ec0f"
   vpc_security_group_ids = [aws_security_group.securitygroup.id]
   subnet_id = aws_subnet.public_sub_1.id
   tags = {
-    Name = "ec2_instance_terraform"
+    Name = "ec2_instance"
   }
 }
 
-resource "aws_s3_bucket" "se_bucket" {
+resource "aws_s3_bucket" "s3_bucket" {
   bucket = "ragu-s3-demo-xyz"
 }
