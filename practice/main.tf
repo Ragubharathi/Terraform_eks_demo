@@ -1,6 +1,7 @@
 resource "aws_security_group" "securitygroup" {
   name = "ec2-securitygroup"
   description = "allow ssh and http"
+  vpc_id = aws_vpc.projectA_vpc.id
 
   ingress {
     from_port = 22
